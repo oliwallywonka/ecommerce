@@ -18,8 +18,8 @@ class CreateEmployeesTable extends Migration
             $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users');
             $table->string('ci');
-            $table->boolean('gender');
-            
+            $table->string('gender');
+
             $table->timestamps();
         });
     }

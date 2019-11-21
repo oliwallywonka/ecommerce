@@ -38,6 +38,8 @@ class DatabaseSeeder extends Seeder
 
         factory(App\Wholeseller::class,20)->create();
 
+        
+
         factory(App\Brand::class,5)->create();
 
         factory(App\Category::class,30)->create();

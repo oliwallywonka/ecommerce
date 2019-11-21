@@ -19,7 +19,7 @@ class CreateTravelsTable extends Migration
             $table->float('food_cost',3,2);
             $table->float('ticket_cost',4,2);
             $table->float('others',5,2)->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

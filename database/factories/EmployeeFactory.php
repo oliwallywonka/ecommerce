@@ -9,6 +9,6 @@ $factory->define(Employee::class, function (Faker $faker) {
     return [
         'users_id' => \App\User::all()->random()->id,
         'ci' => $faker->postcode,
-        'gender' => $faker->randomElement([TRUE,FALSE])
+        'gender' => $faker->randomElement(['MASCULINO','FEMENINO'])
     ];
 });

@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Like::class, function (Faker $faker) {
     return [
-        'customer_id' => \App\Customer::all()->random()->id,
+        'customers_id' => \App\Customer::all()->random()->id,
         'clothes_id' => \App\Clothe::all()->random()->id,
-        'like' => $faker->randomElement(true,false)
+        'like' => $faker->randomElement([true,false])
     ];
 });
