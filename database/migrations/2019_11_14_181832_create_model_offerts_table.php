@@ -15,8 +15,8 @@ class CreateModelOffertsTable extends Migration
     {
         Schema::create('model_offerts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('clothe_models_id');
-            $table->foreign('clothe_models_id')->references('id')->on('clothe_models');
+            $table->unsignedBigInteger('clothe_model_id');
+            $table->foreign('clothe_model_id')->references('id')->on('clothe_models');
             $table->integer('offert_porcent')->default(0);
             $table->integer('offert_days')->default(0);
             $table->boolean('status')->default(true);

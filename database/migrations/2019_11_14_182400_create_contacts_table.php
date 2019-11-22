@@ -15,10 +15,10 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('contact_types_id');
-            $table->foreign('contact_types_id')->references('id')->on('contact_types');
-            $table->unsignedBigInteger('wholesellers_id');
-            $table->foreign('wholesellers_id')->references('id')->on('wholesellers');
+            $table->unsignedBigInteger('contact_type_id');
+            $table->foreign('contact_type_id')->references('id')->on('contact_types');
+            $table->unsignedBigInteger('wholeseller_id');
+            $table->foreign('wholeseller_id')->references('id')->on('wholesellers');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

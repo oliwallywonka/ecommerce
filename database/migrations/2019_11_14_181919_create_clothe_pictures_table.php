@@ -15,8 +15,8 @@ class CreateClothePicturesTable extends Migration
     {
         Schema::create('clothe_pictures', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('clothes_id');
-            $table->foreign('clothes_id')->references('id')->on('clothes');
+            $table->unsignedBigInteger('clothe_id');
+            $table->foreign('clothe_id')->references('id')->on('clothes');
             $table->string('picture');
             $table->boolean('status')->default(true);
             $table->timestamps();

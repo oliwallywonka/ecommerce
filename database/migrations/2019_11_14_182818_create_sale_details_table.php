@@ -15,10 +15,10 @@ class CreateSaleDetailsTable extends Migration
     {
         Schema::create('sale_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('clothes_id');
-            $table->foreign('clothes_id')->references('id')->on('clothes');
-            $table->unsignedBigInteger('sales_id');
-            $table->foreign('sales_id')->references('id')->on('sales');
+            $table->unsignedBigInteger('clothe_id');
+            $table->foreign('clothe_id')->references('id')->on('clothes');
+            $table->unsignedBigInteger('sale_id');
+            $table->foreign('sale_id')->references('id')->on('sales');
             $table->float('sale_price',4,2);
             $table->boolean('status')->default(true);
             $table->timestamps();

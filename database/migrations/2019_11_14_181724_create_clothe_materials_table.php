@@ -15,10 +15,10 @@ class CreateClotheMaterialsTable extends Migration
     {
         Schema::create('clothe_materials', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('materials_id');
-            $table->foreign('materials_id')->references('id')->on('materials');
-            $table->unsignedBigInteger('clothe_models_id');
-            $table->foreign('clothe_models_id')->references('id')->on('clothe_models');
+            $table->unsignedBigInteger('material_id');
+            $table->foreign('material_id')->references('id')->on('materials');
+            $table->unsignedBigInteger('clothe_model_id');
+            $table->foreign('clothe_model_id')->references('id')->on('clothe_models');
             $table->float('porcent');
             $table->boolean('status')->default(true);
             $table->timestamps();

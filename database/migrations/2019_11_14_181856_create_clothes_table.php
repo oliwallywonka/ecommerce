@@ -15,12 +15,12 @@ class CreateClothesTable extends Migration
     {
         Schema::create('clothes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('clothe_models_id');
-            $table->foreign('clothe_models_id')->references('id')->on('clothe_models');
-            $table->unsignedBigInteger('colors_id');
-            $table->foreign('colors_id')->references('id')->on('colors');
-            $table->unsignedBigInteger('sizes_id');
-            $table->foreign('sizes_id')->references('id')->on('sizes');
+            $table->unsignedBigInteger('clothe_model_id');
+            $table->foreign('clothe_model_id')->references('id')->on('clothe_models');
+            $table->unsignedBigInteger('color_id');
+            $table->foreign('color_id')->references('id')->on('colors');
+            $table->unsignedBigInteger('size_id');
+            $table->foreign('size_id')->references('id')->on('sizes');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

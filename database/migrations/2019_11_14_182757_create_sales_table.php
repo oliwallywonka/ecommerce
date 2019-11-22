@@ -15,10 +15,10 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('customers_id');
-            $table->foreign('customers_id')->references('id')->on('customers');
-            $table->unsignedBigInteger('sale_statuses_id');
-            $table->foreign('sale_statuses_id')->references('id')->on('sale_statuses');
+            $table->unsignedBigInteger('customer_id');
+            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->unsignedBigInteger('sale_status_id');
+            $table->foreign('sale_status_id')->references('id')->on('sale_statuses');
             $table->float('total_sale',4,2);
             $table->boolean('status')->default(true);
             $table->timestamps();

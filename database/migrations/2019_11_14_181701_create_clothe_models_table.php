@@ -15,12 +15,12 @@ class CreateClotheModelsTable extends Migration
     {
         Schema::create('clothe_models', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('categories_id');
-            $table->foreign('categories_id')->references('id')->on('categories');
-            $table->unsignedBigInteger('brands_id');
-            $table->foreign('brands_id')->references('id')->on('brands');
-            $table->unsignedBigInteger('type_clothes_id');
-            $table->foreign('type_clothes_id')->references('id')->on('type_clothes');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->unsignedBigInteger('brand_id');
+            $table->foreign('brand_id')->references('id')->on('brands');
+            $table->unsignedBigInteger('type_clothe_id');
+            $table->foreign('type_clothe_id')->references('id')->on('type_clothes');
             $table->float('ref_price',4,2);
             $table->text('description');
             $table->integer('weight');

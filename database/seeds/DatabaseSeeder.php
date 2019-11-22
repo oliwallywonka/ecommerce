@@ -25,20 +25,20 @@ class DatabaseSeeder extends Seeder
         factory(App\User::class,50)->create()
         ->each(function(\App\User $u){
 
-            factory(\App\Employee::class ,1)->create(['users_id'=>$u->id]);
+            factory(\App\Employee::class ,1)->create(['user_id'=>$u->id]);
 
         });
 
         factory(App\User::class,50)->create()
         ->each(function(\App\User $u){
 
-            factory(\App\Customer::class ,1)->create(['users_id'=>$u->id]);
+            factory(\App\Customer::class ,1)->create(['user_id'=>$u->id]);
 
         });
 
         factory(App\Wholeseller::class,20)->create();
 
-        
+
 
         factory(App\Brand::class,5)->create();
 

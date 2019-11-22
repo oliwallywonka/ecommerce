@@ -15,10 +15,11 @@ class CreatePurchaseDetailsTable extends Migration
     {
         Schema::create('purchase_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('purchases_id');
-            $table->foreign('purchases_id')->references('id')->on('purchases');
-            $table->unsignedBigInteger('clothes_id');
-            $table->foreign('clothes_id')->references('id')->on('clothes');
+            $table->unsignedBigInteger('purchase_id');
+            $table->foreign('purchase_id')->references('id')->on('purchases');
+            $table->unsignedBigInteger('clothe_id');
+            $table->foreign('clothe_id')->references('id')->on('clothes');
+            $table->integer('quantity')->default(1);
             $table->float('purchase_price',4,2);
             $table->boolean('status')->default(true);
             $table->timestamps();

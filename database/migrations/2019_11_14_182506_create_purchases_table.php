@@ -15,12 +15,12 @@ class CreatePurchasesTable extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('employees_id');
-            $table->foreign('employees_id')->references('id')->on('employees');
-            $table->unsignedBigInteger('wholesellers_id');
-            $table->foreign('wholesellers_id')->references('id')->on('wholesellers');
-            $table->unsignedBigInteger('travels_id');
-            $table->foreign('travels_id')->references('id')->on('travels');
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees');
+            $table->unsignedBigInteger('wholeseller_id');
+            $table->foreign('wholeseller_id')->references('id')->on('wholesellers');
+            $table->unsignedBigInteger('travel_id');
+            $table->foreign('travel_id')->references('id')->on('travels');
             $table->float('total_cost',5,2);
             $table->boolean('status')->default(true);
             $table->timestamps();

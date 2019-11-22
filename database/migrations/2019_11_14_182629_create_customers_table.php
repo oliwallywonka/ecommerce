@@ -15,8 +15,8 @@ class CreateCustomersTable extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('users_id');
-            $table->foreign('users_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('street')->nullable();
             $table->string('door_number')->nullable();
             $table->boolean('status')->default(true);

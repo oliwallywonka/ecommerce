@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(ModelOffert::class, function (Faker $faker) {
     return [
-        'clothe_models_id' => \App\ClotheModel::all()->random()->id,
+        'clothe_model_id' => \App\ClotheModel::all()->random()->id,
         'offert_porcent' => $faker->numberBetween(0,100),
         'offert_days' => $faker->numberBetween(0,100),
     ];

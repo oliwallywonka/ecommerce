@@ -7,8 +7,8 @@ use Faker\Generator as Faker;
 
 $factory->define(Clothe::class, function (Faker $faker) {
     return [
-        'clothe_models_id' => \App\ClotheModel::all()->random()->id,
-        'colors_id' => \App\Color::all()->random()->id,
-        'sizes_id' => \App\Size::all()->random()->id
+        'clothe_model_id' => \App\ClotheModel::all()->random()->id,
+        'color_id' => \App\Color::all()->random()->id,
+        'size_id' => \App\Size::all()->random()->id
     ];
 });

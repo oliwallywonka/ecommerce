@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(ClothePicture::class, function (Faker $faker) {
     return [
-        'clothes_id' =>\App\Clothe::all()->random()->id,
+        'clothe_id' =>\App\Clothe::all()->random()->id,
         'picture' => \Faker\Provider\Image::image(storage_path().'/app/public/img/clothes',200,200,'people',false)
 
     ];
