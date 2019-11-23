@@ -8,7 +8,7 @@ class SaleDetail extends Model
 {
     public function clothe()
     {
-        return $this->belongsTo(Clothes::class);
+        return $this->belongsTo(Clothe::class);
     }
     public function sale()
     {
