@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClotheMaterial extends Model
 {
-    public function materials()
+    public function material()
     {
         return $this->belongsTo(Material::class);
     }
-    public function clotheModels()
+    public function clothe_model()
     {
         return $this->belongsTo(ClotheModel::class);
     }

@@ -16,17 +16,18 @@ class ClotheModelResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'categories_id' => $this->categories_id,
-            'brands_id' => $this->brands_id,
-            'type_clothes_id' => $this->type_clothes_id,
-            'categories' => new CategoryResource($this->categories),
-            'brands' => new BrandResource($this->brands),
-            'typeClothes' => new TypeClotheResource($this->typeClothes),
+            'category_id' => $this->category_id,
+            'brand_id' => $this->brand_id,
+            'type_clothe_id' => $this->type_clothe_id,
 
-            'modelOfferts' => ModelOffertResource::collection($this->modelOfferts),
-            'clotheMaterials'=> ClotheMaterialResource::collection($this->clotheMaterials),
-            'modelPictures' => ModelPictureResource::colletion($this->modelPictures),
-            
+            'category' => new CategoryResource($this->category),
+            'brand' => new BrandResource($this->brand),
+            'type_clothe' => new TypeClotheResource($this->type_clothe),
+
+            'model_offerts' => ModelOffertResource::collection($this->model_offert),
+            'clothe_materials'=> ClotheMaterialResource::collection($this->clothe_material),
+            'model_pictures' =>  ModelPictureResource::collection($this->model_picture),
+
             'ref_price' => $this->ref_price,
             'description' => $this->description,
             'weight' => $this->weight,

@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-    public function sales()
+    public function sale()
     {
         return $this->hasMany(Sale::class);
     }
-    public function users()
+    public function user()
     {
         return $this->hasOne(User::class);
     }
-    public function likes()
+    public function like()
     {
         return $this->hasMany(Like::class);
     }

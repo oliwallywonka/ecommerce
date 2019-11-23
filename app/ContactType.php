@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ContactType extends Model
 {
-    public function contacts()
+    public function contact()
     {
         return $this->hasMany(Contact::class);
     }

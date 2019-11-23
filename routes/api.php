@@ -23,4 +23,12 @@ Route::get('/banners','BannerController@index');
 
 Route::get('/brands','BrandController@index');
 
+Route::get('/clothes/{id}','ClotheController@show');
+
 Route::get('/clothe_models','ClotheModelController@index');
+
+Route::get('/purchases','PurchaseController@index');
+
+Route::get('/purchase_details/{id}','PurchaseDetailController@show');
+
+

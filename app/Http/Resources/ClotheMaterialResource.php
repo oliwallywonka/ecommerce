@@ -15,10 +15,10 @@ class ClotheMaterialResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'materials_id' => $this->materials_id,
-            'clothe_models_id' => $this->clothe_models_id,
-            'materials' => new ClotheMaterialResource($this->materials),
-            'porcente' => $this->porcent,
+            'material_id' => $this->material_id,
+            'clothe_model_id' => $this->clothe_model_id,
+            'material' => new MaterialResource($this->material),
+            'porcent' => $this->porcent,
             'status' => $this->status
         ];
     }

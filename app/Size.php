@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Size extends Model
 {
-    public function sizes()
+    public function size()
     {
         return $this->hasMany(Clothe::class);
     }

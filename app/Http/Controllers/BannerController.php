@@ -10,5 +10,9 @@ class BannerController extends Controller
 {
     public function index(){
         $banner = Banner::all();
+
+        return [
+            'banners' => $banner
+        ];
     }
 }

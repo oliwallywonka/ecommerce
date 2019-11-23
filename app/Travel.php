@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Travel extends Model
 {
-    public function purchases()
+    public function purchase()
     {
         return $this->hasMany(Purchase::class);
     }

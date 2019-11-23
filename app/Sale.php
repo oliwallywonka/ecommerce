@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sale extends Model
 {
-    public function saleStatuses()
+    public function sale_status()
     {
         return $this->belongsTo(SaleStatus::class);
     }
-    public function saleDetails()
+    public function sale_detail()
     {
         return $this->hasMany(SaleDetail::class);
     }
-    public function customers()
+    public function customer()
     {
         return $this->belongsTo(Customer::class);
     }

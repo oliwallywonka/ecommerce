@@ -6,37 +6,37 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClotheModel extends Model
 {
-    public function brands()
+    public function brand()
     {
         return $this->belongsTo(Brand::class);
     }
 
-    public function categories()
+    public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    public function clotheMaterials()
+    public function clothe_material()
     {
         return $this->hasMany(ClotheMaterial::class);
     }
 
-    public function clothes()
+    public function clothe()
     {
         return $this->hasMany(Clothe::class);
     }
 
-    public function modelOfferts()
+    public function model_offert()
     {
         return $this->hasMany(ModelOffert::class);
     }
 
-    public function typeClothes()
+    public function type_clothe()
     {
         return $this->belongsTo(TypeClothe::class);
     }
-    
-    public function modelPictures()
+
+    public function model_picture()
     {
         return $this->hasMany(ModelPicture::class);
     }

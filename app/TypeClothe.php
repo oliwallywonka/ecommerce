@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TypeClothe extends Model
 {
-    public function clotheModels()
+    public function clothe_model()
     {
         return $this->hasMany(ClotheModel::class);
     }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ModelOffert extends Model
 {
-    public function clotheModels()
+    public function clothe_model()
     {
         return $this->belongsTo(ClotheModel::class);
     }

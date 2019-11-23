@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Color extends Model
 {
-    public function clothes()
+    public function clothe()
     {
         return $this->hasMany(Clothe::class);
     }

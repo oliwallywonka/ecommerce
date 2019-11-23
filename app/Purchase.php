@@ -6,19 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Purchase extends Model
 {
-    public function travels()
+    public function travel()
     {
         return $this->belongsTo(Travel::class);
     }
-    public function purchaseDetails()
+    public function purchase_detail()
     {
         return $this->hasMany(PurchaseDetail::class);
     }
-    public function wholesellers()
+    public function wholeseller()
     {
         return $this->belongsTo(Wholeseller::class);
     }
-    public function employees()
+    public function employee()
     {
         return $this->belongsTo(Employee::class);
     }

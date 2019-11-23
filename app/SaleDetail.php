@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class SaleDetail extends Model
 {
-    public function clothes()
+    public function clothe()
     {
         return $this->belongsTo(Clothes::class);
     }
-    public function sales()
+    public function sale()
     {
         return $this->belongsTo(Sale::class);
     }

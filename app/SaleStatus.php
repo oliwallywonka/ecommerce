@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SaleStatus extends Model
 {
-    public function sales()
+    public function sale()
     {
         return $this->hasMany(Sale::class);
     }

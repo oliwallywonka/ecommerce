@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public function clotheModels()
+    public function clothe_model()
     {
-        return $this->hasMany(ClhoteModel::class);
+        return $this->hasMany(ClotheModel::class);
     }
 }

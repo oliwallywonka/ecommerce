@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-    public function wholeSellers()
+    public function wholeseller()
     {
         return $this->belongsTo(WholeSeller::class);
     }
-    public function contactTypes()
+    public function contact_type()
     {
         return $this->belongsTo(ContactType::class);
     }

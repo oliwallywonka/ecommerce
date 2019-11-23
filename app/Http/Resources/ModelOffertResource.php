@@ -16,7 +16,7 @@ class ModelOffertResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'clothe_models_id' => $this->clothe_models_id,
+            'clothe_model_id' => $this->clothe_model_id,
             'offert_porcent' => $this->offert_porcent,
             'offert_days'=> $this->offert_days,
             'status' => $this->status
