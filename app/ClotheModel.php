@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ClotheModel extends Model
 {
+    protected $fillable = ['category_id','brand_id','type_clothe_id','ref_price','description','weight','gender','care_instructions','status'];
     public function brand()
     {
         return $this->belongsTo(Brand::class);

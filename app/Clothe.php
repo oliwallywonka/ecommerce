@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clothe extends Model
 {
+    protected $fillable = ['clothe_model_id','color_id','size_id','status'];
+
     public function clothe_model()
     {
         return $this->belongsTo(ClotheModel::class);

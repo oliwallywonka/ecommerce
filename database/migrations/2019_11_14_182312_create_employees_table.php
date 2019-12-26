@@ -19,7 +19,7 @@ class CreateEmployeesTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('ci');
             $table->string('gender');
-
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

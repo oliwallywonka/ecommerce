@@ -11,6 +11,7 @@ $factory->define(ClotheModel::class, function (Faker $faker) {
         'brand_id' => \App\Brand::all()->random()->id,
         'type_clothe_id' => \App\TypeClothe::all()->random()->id,
         'ref_price' => $faker->randomFloat(2,1,4),
+        'name' => $faker->name,
         'description' => $faker->paragraph,
         'weight' => $faker->randomNumber(4),
         'gender' => $faker->randomElement(['MASCULINO','FEMENINO','UNISEX']),

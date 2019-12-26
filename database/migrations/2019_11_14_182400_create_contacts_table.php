@@ -19,6 +19,7 @@ class CreateContactsTable extends Migration
             $table->foreign('contact_type_id')->references('id')->on('contact_types');
             $table->unsignedBigInteger('wholeseller_id');
             $table->foreign('wholeseller_id')->references('id')->on('wholesellers');
+            $table->string('data');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

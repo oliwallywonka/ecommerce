@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Purchase extends Model
 {
+    protected $fillable = ['wholeseller_id','employee_id','travel_id','total_cost','status'];
     public function travel()
     {
         return $this->belongsTo(Travel::class);

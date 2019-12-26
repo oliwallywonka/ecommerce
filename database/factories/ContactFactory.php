@@ -9,5 +9,6 @@ $factory->define(Contact::class, function (Faker $faker) {
     return [
         'contact_type_id' => \App\ContactType::all()->random()->id,
         'wholeseller_id' => \App\Wholeseller::all()->random()->id,
+        'data' => $faker->sentence
     ];
 });

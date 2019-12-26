@@ -21,11 +21,12 @@ class CreateClotheModelsTable extends Migration
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->unsignedBigInteger('type_clothe_id');
             $table->foreign('type_clothe_id')->references('id')->on('type_clothes');
+            $table->string('name');
             $table->float('ref_price',4,2);
-            $table->text('description');
-            $table->integer('weight');
+            $table->text('description')->nullable();
+            $table->integer('weight')->nullable();
             $table->string('gender');
-            $table->text('care_instructions');
+            $table->text('care_instructions')->nullabe();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
