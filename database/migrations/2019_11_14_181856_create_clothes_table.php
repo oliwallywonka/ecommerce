@@ -21,6 +21,7 @@ class CreateClothesTable extends Migration
             $table->foreign('color_id')->references('id')->on('colors');
             $table->unsignedBigInteger('size_id');
             $table->foreign('size_id')->references('id')->on('sizes');
+            $table->integer('stock')->default(0);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

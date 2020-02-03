@@ -20,8 +20,6 @@ class ClotheResource extends JsonResource
             'color_id' => new ColorResource($this->color),
             'size_id' => new SizeResource($this->size),
             'clothe_pictures' => ClothePictureResource::collection($this->clothe_picture),
-
-
         ];
     }
 }

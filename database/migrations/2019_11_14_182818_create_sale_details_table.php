@@ -21,6 +21,7 @@ class CreateSaleDetailsTable extends Migration
             $table->foreign('sale_id')->references('id')->on('sales');
             $table->float('sale_price',4,2);
             $table->boolean('status')->default(true);
+            $table->integer('quantity');
             $table->timestamps();
         });
     }

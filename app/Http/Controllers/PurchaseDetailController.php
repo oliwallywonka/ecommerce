@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Validation\ValidationException;
 use App\Http\Resources\PurchaseDetailResource;
 use App\PurchaseDetail;
 class PurchaseDetailController extends Controller

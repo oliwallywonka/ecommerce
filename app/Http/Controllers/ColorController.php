@@ -37,4 +37,66 @@ class ColorController extends Controller
         }
 
     }
+
+    public function update(Request $request, Color $color){
+
+        if($request->ajax()){
+            try {
+                $request->validate([
+                    'color' => 'required|min:2'
+                ]);
+
+                $color->update([
+                    'color' => $request->color,
+                ]);
+
+                return response()->json([
+                    'message' => 'Color creado correctamente',
+                    'id' => $color->id
+                ]);
+
+            } catch (ValidationException $e) {
+                return response()->json($e->validator->errors());
+            }
+        }
+
+    }
+
+    public function activate(Request $request , Color $color){
+        if($request->ajax()){
+
+            try {
+
+                $color->status = 1;
+                $color->save();
+
+                return response()->json(['message' => 'Ropa activada correctamente',
+                                        'id' => $color->id]);
+
+            } catch (ValidationException $e) {
+                return response()->json($e->validator->errors());
+            }
+        }
+
+        abort(401);
+    }
+
+    public function desactivate(Request $request , Color $color){
+        if($request->ajax()){
+
+            try {
+
+                $color->status = 0;
+                $color->save();
+
+                return response()->json(['message' => 'Ropa desactivada correctamente',
+                                        'id' => $color->id]);
+
+            } catch (ValidationException $e) {
+                return response()->json($e->validator->errors());
+            }
+        }
+
+        abort(401);
+    }
 }

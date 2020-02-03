@@ -59,4 +59,80 @@ class ClotheModelController extends Controller
         }
 
     }
+
+    public function update(Request $request,ClotheModel $clothe_model){
+
+        if($request->ajax()){
+            try {
+                $request->validate([
+                    'category_id' => 'required|numeric',
+                    'brand_id' => 'required|numeric',
+                    'type_clothe_id' => 'required|numeric',
+                    'ref_price' => 'required|between:0,1000.99',
+                    'name' => 'required|unique:clothe_models',
+                    'weight' => 'between:0,100000.99',
+                    'gender' => 'required'
+                ]);
+
+                $clothe_model->update([
+                    'category_id' => $request->category_id,
+                    'brand_id' => $request->brand_id,
+                    'type_clothe_id' => $request->type_clothe_id,
+                    'name' => $request->name,
+                    'ref_price' => $request->ref_price,
+                    'description' => $request->description,
+                    'weight' => $request->weight,
+                    'gender' => $request->gender,
+                    'care_instructions' => $request->care_instructions
+                ]);
+
+                return response()->json(['message' => 'Modelo editado correctamente',
+                                         'id' => $clothe_model->id
+                ]);
+
+            } catch (ValidationException $e) {
+                return response()->json($e->validator->errors());
+            }
+        }
+
+    }
+
+    public function activate(Request $request , ClotheModel $clothe_model){
+        if($request->ajax()){
+
+            try {
+
+                $clothe_model->status = 1;
+                $clothe_model->save();
+
+                return response()->json(['message' => 'Ropa activada correctamente',
+                                        'id' => $clothe_model->id]);
+
+            } catch (ValidationException $e) {
+                return response()->json($e->validator->errors());
+            }
+        }
+
+        abort(401);
+    }
+
+    public function desactivate(Request $request , ClotheModel $clothe_model){
+        if($request->ajax()){
+
+            try {
+
+                $clothe_model->status = 0;
+                $clothe_model->save();
+
+                return response()->json(['message' => 'Ropa desactivada correctamente',
+                                        'id' => $clothe_model->id]);
+
+            } catch (ValidationException $e) {
+                return response()->json($e->validator->errors());
+            }
+        }
+
+        abort(401);
+    }
+
 }
